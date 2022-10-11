@@ -105,7 +105,7 @@ void    Bureaucrat::getDemoted()
         throw Bureaucrat::GTLException();
     else if (this->_grade < 1)
         throw Bureaucrat::GTHException();
-    std::cout << this->getName() << " has succesfully been promoted to grade " << this->_grade << std::endl;
+    std::cout << this->getName() << " has succesfully been demoted to grade " << this->_grade << std::endl;
     return ;
 }
 

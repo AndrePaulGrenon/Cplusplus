@@ -8,16 +8,15 @@ int main(void)
 
     try
     {
-
         //CREATE BUREAUCRATS
-        Form form1("Mega project", 150, 150);
-        Form form2("Mega project", 5, 5);
-        std::cout << form1 << std::endl;
         std::cout << BRED "Test the Bureaucrats " CLEAR << std::endl;
-
-        Bureaucrat  instance1("Edo", 120);
-        std::cout << instance1 << std::endl;
+        Form form1("Mini project", 150, 150);
+        Form form2("Mega project", 5, 5);
         Bureaucrat  instance("Andre", 1);
+        Bureaucrat  instance1("Edo", 120);
+
+        std::cout << form1 << form2 << std::endl;
+        std::cout << instance1 << std::endl;
         std::cout << instance << std::endl;
         instance1.getPromotion();
         std::cout << instance1 << std::endl;
@@ -30,7 +29,6 @@ int main(void)
 
         //WHERE ERROR OCCURS
         std::cout << BRED "Try to promote over the limit " CLEAR<< std::endl;
-
         instance.getPromotion();
         
         //THIS CODE IS NOT PROCESSED

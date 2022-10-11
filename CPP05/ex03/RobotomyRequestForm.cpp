@@ -50,7 +50,6 @@ void    RobotomyRequestForm::execute(const Bureaucrat & bureaucrat)const
         throw Form::UNSignedException();
     else if (bureaucrat.getGrade() > this->getExecGrade())
         throw Form::GTLException();
-    srand(time(NULL));
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
     std::cout << "BRRRRRRRRRRRRR....    Zzzzzzz " << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
@@ -61,6 +60,6 @@ void    RobotomyRequestForm::execute(const Bureaucrat & bureaucrat)const
     if (rand() % 100 > 50)
         std::cout << std::endl << this->_target << " Robotomy's was succesful !" << std::endl;
     else
-        std::cerr << std::endl << this->_target << " Robotomy's was a disaster ! We are lucky that the patient was already retarded " << std::endl;
+        std::cout << std::endl << this->_target << " Robotomy's was a disaster ! We are lucky that the patient was already retarded " << std::endl;
     return ; 
 }

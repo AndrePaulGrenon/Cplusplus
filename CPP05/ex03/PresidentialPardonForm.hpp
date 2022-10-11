@@ -13,12 +13,12 @@ public:
     PresidentialPardonForm(PresidentialPardonForm & instance);
     ~PresidentialPardonForm(void);
     
-    PresidentialPardonForm     &operator=(PresidentialPardonForm & rhs);
+    PresidentialPardonForm  &operator=(PresidentialPardonForm & rhs);
     void                    beSigned(const Bureaucrat & bureaucrat);
     void                    execute(const Bureaucrat & bureaucrat)const;
 
 private:
-    const std::string   _target;
+    const std::string       _target;
 };
 
 #endif

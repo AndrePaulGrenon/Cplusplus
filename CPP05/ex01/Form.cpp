@@ -79,6 +79,6 @@ std::ostream&   operator<<(std::ostream &o, const Form& myForm)
     if (myForm.getIsSigned())
         std::cout << myForm.getName() << " is signed and needs Bureaucrat of Grade " << myForm.getExecGrade() << " to execute" <<std::endl;
     else
-        std::cout << myForm.getName() << " needs Bureaucrat of grade " << myForm.getSignGrade() << " to be signed" <<std::endl;
+        std::cout << myForm.getName() << " needs Bureaucrat of grade " << myForm.getSignGrade() << " or more to be signed" <<std::endl;
     return (o);
 }

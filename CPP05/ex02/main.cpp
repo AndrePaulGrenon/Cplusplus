@@ -1,78 +1,122 @@
 #include "Bureaucrat.hpp"
-#include <stdexcept>
-#include <iostream>
-#include "colours.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main(void)
 {
+    //TEST 1
 
-    try
-    {
-
-        //CREATE BUREAUCRATS
-        // //Form form1("Mega project", 150, 150);
-        // Form form2("Mega project", 5, 5);
-        // std::cout << form1 << std::endl;
-        std::cout << BRED "Test the Bureaucrats " CLEAR << std::endl;
-
-        Bureaucrat  instance1("Edo", 120);
-        std::cout << instance1 << std::endl;
-        Bureaucrat  instance("Andre", 1);
-        std::cout << instance << std::endl;
-        instance1.getPromotion();
-        std::cout << instance1 << std::endl;
-        instance1.getDemoted();
-        std::cout << instance1 << std::endl;
-
-
-        // instance1.signForm(form1);
-        // instance1.signForm(form2);
-
-        //WHERE ERROR OCCURS
-        std::cout << BRED "Try to promote over the limit " CLEAR<< std::endl;
-
-        instance.getPromotion();
-        
-        //THIS CODE IS NOT PROCESSED
-        std::cout << instance << std::endl;
-        Bureaucrat  instance3("Alex", 0);
-        Bureaucrat  instance2("Max", 151);
-        std::cout << "anthony est un génie!" << std::endl;
-    }
+   try
+   {
+        std::cout << BRED "TEST 1: INVALID BUREAUCRAT\n" CLEAR << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(1200));
     
-    //EXCEPTION CAUGHT HERE
+        Bureaucrat  instance("Poulpe", 151);
+
+        Form    *Mani = new ShrubberyCreationForm("Forêt");
+        delete Mani;
+   }
+    catch(Bureaucrat::GTLException & e)
+    {
+        std::cerr << e.whate() << std::endl;
+        std::cout << BRED "Exception has been CAUGHT " CLEAR<< std::endl;
+    }
     catch(Bureaucrat::GTHException & e)
     {
         std::cerr << e.whate() << std::endl;
+        std::cout << BRED "Exception has been CAUGHT " CLEAR<< std::endl;
+    }
+
+    //TEST 2
+    try
+    {
+        std::cout << BRED "\nTEST 2: SIGN/EXECUTE SHRUBBERY \n" CLEAR << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(1200));
+        Form    *Calamar = new ShrubberyCreationForm("bouquet");
+        Bureaucrat Pedo;
+        Bureaucrat instance1("AP", 100);
+        Bureaucrat  instance2("Max", 140);
+
+        Pedo.signForm(*Calamar);
+        instance1.signForm(*Calamar);
+        instance1.signForm(*Calamar);
+        instance1.executeForm(*Calamar);
+        Pedo.executeForm(*Calamar);
+        instance2.executeForm(*Calamar);
+        delete Calamar;
     }
     catch(Bureaucrat::GTLException & e)
     {
         std::cerr << e.whate() << std::endl;
+        std::cout << BRED "Exception has been CAUGHT " CLEAR<< std::endl;
     }
-   std::cout << BRED "Exception has been CAUGHT " CLEAR<< std::endl;
-     std::cout << std::endl << BRED "Test FORMS " CLEAR<< std::endl;
-    // //FORM tests
-    // try
-    // {
-    //     // Form mini("Mini project", 123, 115);
-    //     // std::cout << mini << std::endl; 
-    //     // Form wrong("Mini project", 154, 115);
-        
-    //     //IS NOT PROCESSED
-    //     std::cout << "This code will not process" << std::endl;
+    catch(Bureaucrat::GTHException & e)
+    {
+        std::cerr << e.whate() << std::endl;
+        std::cout << BRED "Exception has been CAUGHT " CLEAR<< std::endl;
+    }
 
-    // }
-    // catch(const Form::GTHException& e)
-    // {
-    //     std::cerr << e.whate() << std::endl;
-    // }
-    // catch(const Form::GTLException& e)
-    // {
-    //      std::cerr << e.whate() << std::endl;
-    // }
-    
+    //TEST 3
+    try
+    {
+        std::cout << BRED "\nTEST 3: SIGN/EXECUTE ROBOTOMY\n" CLEAR << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(1200));
+
+        Form *robo = new RobotomyRequestForm("Éric Duhaime");
+        Bureaucrat  player1("Bistro-Pub", 100);
+        Bureaucrat  player2("Machine", 45);
+
+        player1.executeForm(*robo);
+        player1.signForm(*robo);
+        player2.executeForm(*robo);
+        player2.signForm(*robo);
+        player1.executeForm(*robo);
+        player2.executeForm(*robo);
+        player2.executeForm(*robo);
+        player2.executeForm(*robo);
+        player2.executeForm(*robo);
+        delete robo;
+    }
+    catch(Bureaucrat::GTLException & e)
+    {
+        std::cerr << e.whate() << std::endl;
+        std::cout << BRED "Exception has been CAUGHT " CLEAR<< std::endl;
+    }
+    catch(Bureaucrat::GTHException & e)
+    {
+        std::cerr << e.whate() << std::endl;
+        std::cout << BRED "Exception has been CAUGHT " CLEAR<< std::endl;
+    }
+
+    //TEST 4
+    try
+    {
+        std::cout << BRED "\nTEST 4: SIGN/EXECUTE PRESIDENTIAL PARDON\n" CLEAR << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        Form *important = new PresidentialPardonForm("Gollum");
+        Bureaucrat  instance("Andre", 1);
+        Bureaucrat  instance2("Edo", 24);
+        std::cout << BHRED << "<< OVERLOAD :   " YEL << instance << instance2 << *important << CLEAR << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+        instance.signForm(*important);
+        instance2.executeForm(*important);
+        instance.executeForm(*important);
+        delete important; 
+    }
+    catch(Bureaucrat::GTLException & e)
+    {
+        std::cerr << e.whate() << std::endl;
+        std::cout << BRED "Exception has been CAUGHT " CLEAR<< std::endl;
+    }
+    catch(Bureaucrat::GTHException & e)
+    {
+        std::cerr << e.whate() << std::endl;
+        std::cout << BRED "Exception has been CAUGHT " CLEAR<< std::endl;
+    }
 
 
-    std::cout << BRED "Exception has been CAUGHT once again" CLEAR<< std::endl;
-    return(0);
+
+   return(0);
 } 

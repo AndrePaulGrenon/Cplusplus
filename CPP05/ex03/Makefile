@@ -10,16 +10,16 @@
 ###Made by André-Paul Grenon--#useraddress: agrenon@student.42quebec.com--###
 #-------------------------------------------------------------------------###
 ###THIS PROJECT: SO_LONG 
-NAME = ex02 #(Nom de L'exécutable)
+NAME = ex03 #(Nom de L'exécutable)
 
 ###----------------####1.  VARIABLES####----------------------------------###
 
 BONUS = 
 
 ### Fichiers .c
-SRCS_C	= main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRCS_C	= main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 
-INCLUDE	= Bureaucrat.hpp Form.hpp colours.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+INCLUDE	= Bureaucrat.hpp Form.hpp colours.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp
 
 #Crée les fichiers objets à partir des fichiers .c:
 OBJS_O			= $(SRCS_C:.cpp=.o)

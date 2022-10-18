@@ -31,7 +31,7 @@ Dog::~Dog(void)
 
  Dog&    Dog::operator=(Dog const & rhs)
  {
-
+    this->_brain = rhs._brain;
     return (*this);
  }
 

@@ -6,7 +6,7 @@
 /*   By: agrenon <agrenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 14:51:47 by agrenon           #+#    #+#             */
-/*   Updated: 2022/09/28 15:14:26 by agrenon          ###   ########.fr       */
+/*   Updated: 2022/10/18 15:39:48 by agrenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 
     WrongAnimal&    operator=(WrongAnimal const & rhs);
     
-    virtual void    makeSound(void) const;
+    void    makeSound(void) const;
 
     std::string getType(void) const;
     void        setType(std::string type);

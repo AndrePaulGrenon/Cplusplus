@@ -6,7 +6,7 @@
 /*   By: agrenon <agrenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 14:51:39 by agrenon           #+#    #+#             */
-/*   Updated: 2022/09/28 15:14:26 by agrenon          ###   ########.fr       */
+/*   Updated: 2022/10/18 12:59:31 by agrenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main(void)
 
 
     std::cout << BRED "\n\tMake Sounds \t\n" CLEAR << std::endl;
-
+    
     j->makeSound();
     i->makeSound();
     meta->makeSound();

@@ -6,7 +6,7 @@
 /*   By: agrenon <agrenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 14:51:25 by agrenon           #+#    #+#             */
-/*   Updated: 2022/09/29 10:40:57 by agrenon          ###   ########.fr       */
+/*   Updated: 2022/10/18 16:11:24 by agrenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ Cat::~Cat(void)
 
  Cat&    Cat::operator=(Cat const & rhs)
  {
-
+     this->_brain = rhs._brain;
     return (*this);
  }
 

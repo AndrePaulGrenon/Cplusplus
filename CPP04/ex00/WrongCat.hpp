@@ -6,7 +6,7 @@
 /*   By: agrenon <agrenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 14:51:52 by agrenon           #+#    #+#             */
-/*   Updated: 2022/09/28 14:56:00 by agrenon          ###   ########.fr       */
+/*   Updated: 2022/10/18 15:58:23 by agrenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ public:
     ~WrongCat(void);
 
     WrongCat&    operator=(WrongCat const & rhs);
+    void        makeSound(void) const;
 };
 
 #endif

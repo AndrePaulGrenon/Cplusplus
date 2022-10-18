@@ -24,5 +24,7 @@ Brain::~Brain(void)
 
 Brain&  Brain::operator=(Brain const & rhs)
 {
+    for(int i = 0; i < 100; i++)
+        this->_ideas[i] = rhs._ideas[i];
     return (*this);
 }

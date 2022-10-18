@@ -6,7 +6,7 @@
 /*   By: agrenon <agrenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 14:51:30 by agrenon           #+#    #+#             */
-/*   Updated: 2022/09/28 15:14:26 by agrenon          ###   ########.fr       */
+/*   Updated: 2022/10/18 16:00:31 by agrenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 
     Cat&    operator=(Cat const & rhs);
 
-    void    makeSound(void) const;
+    virtual void    makeSound(void) const;
 
 };
 

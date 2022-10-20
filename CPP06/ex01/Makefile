@@ -10,16 +10,16 @@
 ###Made by André-Paul Grenon--#useraddress: agrenon@student.42quebec.com--###
 #-------------------------------------------------------------------------###
 ###THIS PROJECT: SO_LONG 
-NAME = convert #(Nom de L'exécutable)
+NAME = serialize #(Nom de L'exécutable)
 
 ###----------------####1.  VARIABLES####----------------------------------###
 
 BONUS = 
 
 ### Fichiers .c
-SRCS_C	= main.cpp Convert.Class.cpp		
+SRCS_C	= main.cpp Data.cpp
 
-INCLUDE	= Convert.Class.hpp colours.hpp
+INCLUDE	= colours.hpp Data.hpp
 
 #Crée les fichiers objets à partir des fichiers .c:
 OBJS_O			= $(SRCS_C:.cpp=.o)

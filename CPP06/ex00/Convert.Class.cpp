@@ -1,10 +1,19 @@
 #include "Convert.Class.hpp"
 
-Convert::Convert(std::string s) : _str(s) , _d(0), _i(0), _f(0)
+Convert::Convert(std::string s) :  _index(-1) , _d(0), _i(0), _f(0)
 {
     int a;
-    
-    a = this->_detectLiteral(s);
+    try
+    {
+        a = this->_detectLiteral(s);
+        this->_index = a;
+        /* code */
+    }
+    catch(const std::exception& e)
+    {
+        a = 4;
+        std::cerr << e.what() << std::endl;
+    }
     switch (a)
     {
     case CHAR:
@@ -19,10 +28,13 @@ Convert::Convert(std::string s) : _str(s) , _d(0), _i(0), _f(0)
     case DOUBLE:
         fromDouble(s);
         break;
+    default:
+        printFunction();
+        break;
     }
 }
 
-Convert::Convert(Convert const &convert) : _c(convert.getChar()), _i(convert.getInt()), _f(convert.getFloat()), _d(convert.getDouble())
+Convert::Convert(Convert const &convert) : _index(-1), _c(convert.getChar()), _i(convert.getInt()), _f(convert.getFloat()), _d(convert.getDouble())
 {
     return ;
 }
@@ -34,7 +46,6 @@ Convert::~Convert(void)
 
 Convert &Convert::operator=(Convert const &rhs)
 {
-    this->setStr(rhs.getStr());
     this->setChar(rhs.getChar());
     this->setInt(rhs.getInt());
     this->setFloat(rhs.getFloat());
@@ -109,7 +120,7 @@ const int   Convert::_detectLiteral(std::string const str) const
     if (str[0] > 26 && str[0] < 127) // && str.find_first_of('.') == str.find_last_not_of('.'))
         return (DOUBLE);
 
-    return(4);
+    return(-1);
 }
 
 //PRINT FUNCTION;
@@ -132,11 +143,6 @@ void    Convert::printFunction(void)
 
 //ACCESSORS - SET
 
-void    Convert::setStr(std::string const &str)
-{
-    this->_str = str;
-}
-    
 void    Convert::setChar(char const &c)
 {
     this->_c = c;
@@ -155,7 +161,7 @@ void    Convert::setInt(int const &i)
 void    Convert::setFloat(float const &f)
 {
     this->_f = f;
-    if (this->getFloat() == 0)
+    if (this->_index == INT)
         std::cout << "Float : " << this->_f << ".0f" << std::endl;
     else
         std::cout << "Float : " << this->_f << "f" << std::endl;
@@ -165,7 +171,7 @@ void    Convert::setDouble(double const &d)
 {
     this->_d = d;
 
-    if (this->getDouble() == 0)
+    if (this->_index == INT)
         std::cout << "Double : " << this->_d << ".0" << std::endl;
     else
         std::cout << "Double : " << this->_d << std::endl;
@@ -191,9 +197,4 @@ const float     &Convert::getFloat(void) const
 const double    &Convert::getDouble(void) const
 {
      return (this->_d);
-}
-
-const std::string   &Convert::getStr(void) const
-{
-    return (this->_str);
 }

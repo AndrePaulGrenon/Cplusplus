@@ -24,13 +24,11 @@ public:
 
     Convert &operator=(Convert const &rhs);
 
-    void    setStr(std::string const &str);
     void    setChar(char const &c);
     void    setInt(int const &i);
     void    setFloat(float const &f);
     void    setDouble(double const &d);
     
-    const std::string   &getStr(void) const;
     const char          &getChar(void) const;
     const int           &getInt(void) const;
     const float         &getFloat(void) const;
@@ -44,7 +42,7 @@ public:
     void    printFunction(void);
 
 private:
-    std::string _str;
+    int         _index;
     char        _c;
     int         _i;
     float       _f;

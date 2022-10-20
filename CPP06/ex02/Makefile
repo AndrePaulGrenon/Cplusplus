@@ -10,16 +10,16 @@
 ###Made by André-Paul Grenon--#useraddress: agrenon@student.42quebec.com--###
 #-------------------------------------------------------------------------###
 ###THIS PROJECT: SO_LONG 
-NAME = convert #(Nom de L'exécutable)
+NAME = trueType #(Nom de L'exécutable)
 
 ###----------------####1.  VARIABLES####----------------------------------###
 
 BONUS = 
 
 ### Fichiers .c
-SRCS_C	= main.cpp Convert.Class.cpp		
+SRCS_C	= main.cpp A.cpp B.cpp C.cpp Base.cpp Functions.cpp
 
-INCLUDE	= Convert.Class.hpp colours.hpp
+INCLUDE	= colours.hpp A.hpp B.hpp C.hpp Base.hpp lib.hpp
 
 #Crée les fichiers objets à partir des fichiers .c:
 OBJS_O			= $(SRCS_C:.cpp=.o)

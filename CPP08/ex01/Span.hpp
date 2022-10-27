@@ -3,14 +3,22 @@
 
 #pragma once
 
+#include <deque>
+
 class Span
 {
 public:
-    Span();
-    ~Span();
+    Span(const unsigned int a);
+    Span(const Span &span);
+    ~Span(void);
+
+    const Span  &operator=(const Span   &rhs);
+
+    void    addNumber(int n);
 
 private:
-
+    std::deque<int>    _tab;
+    const unsigned int  _maxN;
 };
 
 #endif

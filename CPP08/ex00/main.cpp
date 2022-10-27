@@ -1,26 +1,67 @@
 #include <stdexcept>
 #include <iostream>
 #include "colours.hpp"
-#include "Whatever.hpp"
+#include "EasyFind.hpp"
+#include <list>
+#include <vector>
+#include <iterator>
 
 int main(int argc, char **argv)
 {
-    std::cout << BRED "CHANGE VALUES" CLEAR << std::endl;
-    
-    int a = 2;
-    int b = 3;
+    std::list<int>  lst1;
+    std::vector<int>    vec1(3, 7);
+    std::vector<int>::iterator	it2;
 
-    ::swap( a, b );
+    vec1.push_back(111);
+    lst1.push_back(8);
+    lst1.push_back(9);
+    lst1.push_back(11);
 
-    std::cout << "a = " << a << ", b = " << b << std::endl;
-    std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-    std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
-    std::string c = "chaine1";
-    std::string d = "chaine2";
-    ::swap(c, d);
-    std::cout << "c = " << c << ", d = " << d << std::endl;
-    std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-    std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
-    
+    std::cout << BRED "TRY LIST EASYFIND" CLEAR << std::endl;
+    try
+    {
+        std::list<int>::iterator    it;
+        it = easyFind(lst1, 7); 
+        std::cout << *it << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << "Error: no such element in the container" << std::endl;
+    }
+
+    try
+    {
+        std::list<int>::iterator    it;
+        it = easyFind(lst1, 8); 
+        std::cout << "Number " << *it << " was found" << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << "Error: no such element in the container" << std::endl;
+    }
+
+    std::cout << BRED "TRY VECTOR EASYFIND" CLEAR << std::endl;
+    try
+    {
+        std::vector<int>::iterator    it;
+        it = easyFind(vec1, 7); 
+        std::cout << "Number " << *it << " was found" << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << "Error: no such element in the container" << std::endl;
+    }
+
+    try
+    {
+        std::vector<int>::iterator    it;
+        it = easyFind(vec1, 112); 
+        std::cout << "Number: " << *it << " was found" << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << "Error: no such element in the container" << std::endl;
+    }
+
     return (0);
 } 

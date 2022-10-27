@@ -35,14 +35,14 @@ public:
 
     //ACCESSOR MEMBER FUNCTIONS
 
-    std::string getName() const;
-    int         getGrade() const;
-    void        getPromotion();
-    void        getDemoted();
+    const std::string getName() const;
+    const int         getGrade() const;
+    void              getPromotion();
+    void              getDemoted();
 
     //OPERATOR OVERLOAD
 
-    Bureaucrat& operator=(const Bureaucrat& publicServant);
+    Bureaucrat  &operator=(const Bureaucrat& publicServant);
     Bureaucrat  &operator++(void);
     Bureaucrat  &operator--(void);
     Bureaucrat  operator++(int);

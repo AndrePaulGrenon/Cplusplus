@@ -10,16 +10,16 @@
 ###Made by André-Paul Grenon--#useraddress: agrenon@student.42quebec.com--###
 #-------------------------------------------------------------------------###
 ###THIS PROJECT: SO_LONG 
-NAME = ex00 #(Nom de L'exécutable)
+NAME = ex01 #(Nom de L'exécutable)
 
 ###----------------####1.  VARIABLES####----------------------------------###
 
 BONUS = 
 
 ### Fichiers .c
-SRCS_C	= main.cpp
+SRCS_C	= main.cpp Span.cpp
 
-INCLUDE	= colours.hpp EasyFind.hpp
+INCLUDE	= colours.hpp Span.hpp
 
 #Crée les fichiers objets à partir des fichiers .c:
 OBJS_O			= $(SRCS_C:.cpp=.o)

@@ -38,14 +38,14 @@ public:
 
     //ACCESSOR MEMBER FUNCTIONS
 
-    std::string getName(void) const;
-    int         getGrade(void) const;
-    void        getPromotion(void);
-    void        getDemoted(void);
-    void        signForm(Form& myForm);
-    void        executeForm(const Form& myForm);
+    const std::string   getName(void) const;
+    const int           getGrade(void) const;
+    void                getPromotion(void);
+    void                getDemoted(void);
+    void                signForm(Form& myForm);
+    void                executeForm(const Form& myForm);
 
-    Bureaucrat& operator=(const Bureaucrat& publicServant);
+    Bureaucrat  &operator=(const Bureaucrat& publicServant);
     Bureaucrat  &operator++(void);
     Bureaucrat  &operator--(void);
     Bureaucrat  operator++(int);

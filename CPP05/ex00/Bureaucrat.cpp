@@ -75,12 +75,12 @@ std::ostream&   operator<<(std::ostream &o, const Bureaucrat & publicServant)
 
 //MEMBER FUNCTIONS
 
-std::string Bureaucrat::getName() const
+const std::string Bureaucrat::getName() const
 {
     return (this->_name);
 }
 
-int         Bureaucrat::getGrade() const
+const int         Bureaucrat::getGrade() const
 {
     this->throwExcept();
     return(this->_grade);

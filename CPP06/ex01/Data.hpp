@@ -17,8 +17,8 @@ public:
     Data&   operator=(const Data& rhs);
 
 //ACCESSORS
-    void    setName(const std::string name);
-    const std::string&    getName() const;
+    void                setName(const std::string name);
+    const std::string&  getName() const;
 
 private:
     std::string _name;

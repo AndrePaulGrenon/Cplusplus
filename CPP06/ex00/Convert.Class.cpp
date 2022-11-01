@@ -92,8 +92,14 @@ void    Convert::fromFloat(const std::string str)
 void    Convert::fromDouble(const std::string str)
 {
     this->setDouble(std::stod(str));
-    this->setChar(static_cast<char>(this->getDouble()));
-    this->setInt(static_cast<int>(this->getDouble()));
+    if (this->getDouble() < 0 || this->getDouble() > 255 || isnan(this->getDouble()))
+           std::cout << "Char : Impossible" << std::endl;
+    else
+        this->setChar(static_cast<char>(this->getDouble()));
+    if (this->getDouble() < INT_MAX && this->getDouble() > INT_MIN && isnan(this->getDouble()) == false)
+        this->setInt(static_cast<int>(this->getDouble()));
+    else
+        std::cout << "Int : Impossible" << std::endl;
     this->setFloat(static_cast<double>(this->getDouble()));
     return ;
 }
@@ -161,7 +167,7 @@ void    Convert::setInt(int const &i)
 void    Convert::setFloat(float const &f)
 {
     this->_f = f;
-    if (this->_index == INT)
+    if (this->_index == INT || static_cast<float>(static_cast<int>(f)) == f)
         std::cout << "Float : " << this->_f << ".0f" << std::endl;
     else
         std::cout << "Float : " << this->_f << "f" << std::endl;
@@ -171,7 +177,7 @@ void    Convert::setDouble(double const &d)
 {
     this->_d = d;
 
-    if (this->_index == INT)
+    if (this->_index == INT || static_cast<double>(static_cast<int>(d)) == d)
         std::cout << "Double : " << this->_d << ".0" << std::endl;
     else
         std::cout << "Double : " << this->_d << std::endl;

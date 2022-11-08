@@ -5,26 +5,24 @@
 #include "Iter.hpp"
 
 template<typename T>
-void    increments(T &t)
+void    nToPrint(const T &t)
 {
-    t++;
+    std::cout << "Printf this ma man : " << t << std::endl;
 }
 
-void    setRandom(int &i)
+void    setRandom(const int &i)
 {
-
     srand(time(NULL));
-
-    i = reinterpret_cast<int>(rand() % 1000);
-    
-    usleep(12345);    
+    int a = reinterpret_cast<int>(rand() % 1000);
+    std::cout << a << std::endl;
+    return ;
 }
 
-void    setRandom(double &i)
+void    setRandom(const double &i)
 {
-    i = (rand() % 1000);
-    
-    usleep(12345);
+     srand(time(NULL));
+    std::cout << (rand() % 1000) << std::endl;
+    return ;
 }
 
 
@@ -38,19 +36,16 @@ int main(int argc, char **argv)
     for (size_t i = 0; i < 2; i++)
     {
         a[i] = i;
-        d[i] = i;
+        d[i] = i + 42;
         std::cout << "INT a[" << i << "]= " << a[i] << std::endl;
         std::cout << "DOUBLE d[" << i << "]= " << d[i] << std::endl;
     }
 
-    std::cout << BRED "TESTINT TEMPLATE FUNCTION : template<typename T> increments(T &t)" CLEAR << std::endl;
+    std::cout << BRED "TESTINT TEMPLATE FUNCTION : template<typename T> nToPrintf(const T &t)" CLEAR << std::endl;
 
-    iter<int>(a, 2, &increments);
-    iter<double>(d, 2, &increments);
-    std::cout << "increments all value of the array by one" << std::endl;
-    std::cout << "a[0] = " << a[0] << std::endl;
-    std::cout << "a[1] = " << a[1] << std::endl;
-    
+    iter<int>(a, 2, &nToPrint);
+    iter<double>(d, 2, &nToPrint);
+
     std::cout << "d[0] = " << d[0] << std::endl;
     std::cout << "d[1] = " << d[1] << std::endl;
 

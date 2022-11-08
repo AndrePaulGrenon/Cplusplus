@@ -32,6 +32,13 @@ public:
             virtual const char* what() const throw() { return ("SPAN::FULLException: Span can't take more data");}
     };
 
+    class SPANFCTException: public std::exception
+    {
+        private:
+        public:
+            virtual const char* what() const throw() { return ("SPAN::FCTException: Span doesn't have enough data");}
+    };
+
     class OUTOFBOUNDSException: public std::exception
     {
         private:

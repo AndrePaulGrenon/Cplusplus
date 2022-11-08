@@ -23,12 +23,13 @@ public:
             _tab[j] = array._tab[j];
     }
 
-    ~Array(void) {}
+    ~Array(void) {
+        delete [] this->_tab;
+    }
 
     Array &operator=(const Array &rhs) {
         if (_tab) 
             delete [] _tab;
-            
         int length = rhs.getSize();
         std::cout << "Lenght in assignment operator : " << length << std::endl;
         _tab = new T[length];
@@ -40,7 +41,9 @@ public:
     const T &operator[](unsigned int idx ) const 
     {
         if (idx >= getSize())
+        {
             throw std::exception(); 
+        }
         return (_tab[idx]);
     }
     const unsigned int   &getSize() const {return (_size); }

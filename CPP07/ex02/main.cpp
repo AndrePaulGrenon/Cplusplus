@@ -20,17 +20,19 @@ int main(int argc, char **argv)
     {
         std::cout << "Try accesss array 1: " << array1[1] << std::endl;
         std::cout << "Try accesss array -1: " << array1[-1] << std::endl;
-        std::cout << "Try accesss array 11: " << array1[11] << std::endl;
-        /* code */
+        //std::cout << "Try accesss array 11: " << array1[13] << std::endl;
+
     }
     catch(const std::exception& e)
     {
         std::cerr << "Array Exception caught - Bad access" << std::endl;
+
     }
     
     std::cout << BRED "TESTINT getSize" CLEAR << std::endl;
 
     std::cout << "Array: " << array.getSize()  << "  Array1: " << array1.getSize() << std::endl;
 
+    delete a;
     return (0);
 } 

@@ -10,7 +10,7 @@
 ###Made by André-Paul Grenon--#useraddress: agrenon@student.42quebec.com--###
 #-------------------------------------------------------------------------###
 ###THIS PROJECT: SO_LONG 
-NAME = ex01 #(Nom de L'exécutable)
+NAME = ex02 #(Nom de L'exécutable)
 
 ###----------------####1.  VARIABLES####----------------------------------###
 

@@ -86,7 +86,7 @@ unsigned int Span::shortestSpan(void)
     int lastValue;
     int smallestRange = INT32_MAX;
     if (this->getN() < 2)
-        throw Span::SPANFULLException();
+        throw Span::SPANFCTException();
     while (it != ite)
     {
         firstValue = *it;
@@ -105,22 +105,22 @@ unsigned int Span::longestSpan(void)
 {
     std::set<int>::iterator it = this->getSet().begin();
     std::set<int>::iterator ite = this->getSet().end();
+    std::set<int>::iterator itt;
 
     int firstValue;
     int lastValue;
     int longestRange = INT32_MIN;
     if (this->getN() < 2)
-        throw Span::SPANFULLException();
+        throw Span::SPANFCTException();
+    firstValue = *it;
     while (it != ite)
     {
-        firstValue = *it;
-        ++it;
-        lastValue = *it;
-        if (it != ite)
-        {
-            if (lastValue - firstValue > longestRange)
-               longestRange = lastValue - firstValue;
-        }
+        itt = it;
+        itt++;
+        if (itt == ite)
+            longestRange = *it - firstValue;
+
+        it++;
     }
     return (longestRange);
 }

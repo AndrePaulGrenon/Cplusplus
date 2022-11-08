@@ -8,20 +8,20 @@
 
 int main(int argc, char **argv)
 {
-    std::list<int>  lst1;
-    std::vector<int>    vec1(3, 7);
+    std::list<int>              dlst1;
+    std::vector<int>            vec1(3, 7);
     std::vector<int>::iterator	it2;
 
     vec1.push_back(111);
-    lst1.push_back(8);
-    lst1.push_back(9);
-    lst1.push_back(11);
+    dlst1.push_back(8);
+    dlst1.push_back(9);
+    dlst1.push_back(11);
 
     std::cout << BRED "TRY LIST EASYFIND" CLEAR << std::endl;
     try
     {
         std::list<int>::iterator    it;
-        it = easyFind(lst1, 7); 
+        it = easyFind(dlst1, 7); 
         std::cout << *it << std::endl;
     }
     catch(const std::exception& e)
@@ -32,7 +32,7 @@ int main(int argc, char **argv)
     try
     {
         std::list<int>::iterator    it;
-        it = easyFind(lst1, 8); 
+        it = easyFind(dlst1, 8); 
         std::cout << "Number " << *it << " was found" << std::endl;
     }
     catch(const std::exception& e)
